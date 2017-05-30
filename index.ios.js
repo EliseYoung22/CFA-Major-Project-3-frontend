@@ -16,56 +16,46 @@ import BrandList from './components/brandList.js'
 
 
 export default class fashionfinder extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      ethical: '',
-      sustainable: '',
-      description: '',
-      certificates:'',
-    };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     name: '',
+  //     ethical: '',
+  //     sustainable: '',
+  //     description: '',
+  //     certificates:'',
+  //   };
+  // }
+
+  function getBrand() {
+    return fetch('https://brands-fb.herokuapp.com/api')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        return responseJson.name;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
-  getBrandList() {
-      const URL =
-      'https://brands-fb.herokuapp.com/api'
-      axios.get(URL)
-        .then((response) => {
-          this.setState({ name: response.data });
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-
-//
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text style={styles.welcome}>
-//           Welcome to fashionfinder!
-//         </Text>
-//         <Text style={styles.instructions}>
-//           Hello Hannah
-//         </Text>
-//         <Text style={styles.instructions}>
-//           Press Cmd+R to reload,{'\n'}
-//           Cmd+D or shake for dev menu
-//         </Text>
-//       </View>
-//     );
-//   }
-// }
-render() {
+  render() {
     return (
-      <div>
-        <h1>Need</h1>
-      <BrandList name={this.state.name} />}
-      </div>
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to fashionfinder!
+        </Text>
+        <Text style={styles.instructions}>
+          Hello Hannah
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
+        </Text>
+      </View>
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
