@@ -1,19 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput
 } from 'react-native';
 import axios from 'axios';
-import BrandList from './components/brandList.js'
-
+import BrandList from './components/brandList.js';
+import SearchBar from './components/SearchBar/SearchBar.js';
+const ReactNative = require('react-native');
+const {
+  Alert,
+  Button,
+} = ReactNative;
 
 export default class fashionfinder extends Component {
   // constructor(props) {
@@ -26,12 +26,33 @@ export default class fashionfinder extends Component {
   //     certificates:'',
   //   };
   // }
+  // .then((response) => {
+  //   this.setState({
+  //     name: response.data.name,
+  //     ethical: response.data.ethical,
+  //     sustainable: response.data.sustainable,
+  //     description: response.data.description,
+  //     certificates: response.data.certificates
+  //   });
+  // })
 
-  function getBrand() {
+  componentDidMount() {
+    console.log('mounted');
+    this.getBrandsFromApiAsync();
+  };
+
+  onButtonPress() {
+    Alert.alert('Button has been pressed!');
+    console.log('button-pressed');
+    this.getBrandsFromApiAsync();
+  };
+
+  getBrandsFromApiAsync() {
     return fetch('https://brands-fb.herokuapp.com/api')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        return responseJson.name;
+      // .then((response) => response.json())
+      .then((response) => {
+        console.log(response.json());
+        return response;
       })
       .catch((error) => {
         console.error(error);
@@ -45,12 +66,11 @@ export default class fashionfinder extends Component {
           Welcome to fashionfinder!
         </Text>
         <Text style={styles.instructions}>
-          Hello Hannah
         </Text>
+        <Button onPress={this.getBrandsFromApiAsync} title="click me"></Button>
         <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
         </Text>
+        <SearchBar />
       </View>
     );
   }
