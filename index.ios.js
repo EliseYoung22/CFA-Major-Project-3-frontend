@@ -9,6 +9,8 @@ import {
 import axios from 'axios';
 import BrandList from './components/brandList.js';
 import SearchBar from './components/SearchBar/SearchBar.js';
+// import brandList from './components/brandList.js';
+
 const ReactNative = require('react-native');
 const {
   Alert,
@@ -16,16 +18,16 @@ const {
 } = ReactNative;
 
 export default class fashionfinder extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     name: '',
-  //     ethical: '',
-  //     sustainable: '',
-  //     description: '',
-  //     certificates:'',
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      ethical: '',
+      sustainable: '',
+      description: '',
+      certificates:'',
+    };
+  }
   // .then((response) => {
   //   this.setState({
   //     name: response.data.name,
@@ -49,11 +51,21 @@ export default class fashionfinder extends Component {
 
   getBrandsFromApiAsync() {
     return fetch('https://brands-fb.herokuapp.com/api')
-      // .then((response) => response.json())
+      .then((response) => response.json())
       .then((response) => {
-        console.log(response.json());
-        return response;
+        this.setState({brands: response})
+        // console.log(response);
+        // return response
       })
+      // .then((response) => {
+      //   this.setState({
+      //     name: response.data.name,
+      //     ethical: response.data.ethical,
+      //     sustainable: response.data.sustainable,
+      //     description: response.data.description,
+      //     certificates: response.data.certificates
+      //   });
+      // })
       .catch((error) => {
         console.error(error);
       });
@@ -71,6 +83,7 @@ export default class fashionfinder extends Component {
         <Text style={styles.instructions}>
         </Text>
         <SearchBar />
+        {/* <BrandList /> */}
       </View>
     );
   }

@@ -1,17 +1,26 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
+// import React, { Component } from 'react';
+// import { Text, View, ListView, StyleSheet } from 'react-native';
 //
+// class BrandList extends Component {
+//   constructor(props) {
+//     super();
+//     const data = props.brand.map((brand) => brand.name)
+//     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+//     this.state = {
+//       dataSource: ds.cloneWithRows(data),
+//     };
+//   }
 //
-// const BrandList = (props) => {
-// 	return (
-// 		<ul>
-// 			{props.brand.map((brand, i) => <li key={i}>{brand.name}</li>)}
-// 		</ul>
-// 	)
-// };
+//   render () {
+//     return (
+//       <ListView
+//         dataSource={this.state.dataSource}
+//         renderRow={(rowData) => <Text>{rowData}</Text>}
+//       />
 //
-// BrandList.propTypes = {
-// 	name: PropTypes.string.isRequired
+//         // {/* {props.movies.map((movie, i) => <Text key={i}>{movie.name}</Text>)} */}
+//     )
+//   }
 // };
 //
 // export default BrandList;
