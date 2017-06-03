@@ -7,8 +7,10 @@ import {
   TextInput
 } from 'react-native';
 import axios from 'axios';
-import BrandList from './components/brandList.js';
+import BrandList from './components/BrandList.js';
 import SearchBar from './components/SearchBar/SearchBar.js';
+// import brandList from './components/brandList.js';
+
 const ReactNative = require('react-native');
 const {
   Alert,
@@ -16,48 +18,12 @@ const {
 } = ReactNative;
 
 export default class fashionfinder extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     name: '',
-  //     ethical: '',
-  //     sustainable: '',
-  //     description: '',
-  //     certificates:'',
-  //   };
-  // }
-  // .then((response) => {
-  //   this.setState({
-  //     name: response.data.name,
-  //     ethical: response.data.ethical,
-  //     sustainable: response.data.sustainable,
-  //     description: response.data.description,
-  //     certificates: response.data.certificates
-  //   });
-  // })
 
-  componentDidMount() {
-    console.log('mounted');
-    this.getBrandsFromApiAsync();
-  };
-
-  onButtonPress() {
-    Alert.alert('Button has been pressed!');
-    console.log('button-pressed');
-    this.getBrandsFromApiAsync();
-  };
-
-  getBrandsFromApiAsync() {
-    return fetch('https://brands-fb.herokuapp.com/api')
-      // .then((response) => response.json())
-      .then((response) => {
-        console.log(response.json());
-        return response;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+  // onButtonPress() {
+  //   Alert.alert('Button has been pressed!');
+  //   console.log('button-pressed');
+  //   this.getBrandsFromApiAsync();
+  // };
 
   render() {
     return (
@@ -67,10 +33,11 @@ export default class fashionfinder extends Component {
         </Text>
         <Text style={styles.instructions}>
         </Text>
-        <Button onPress={this.getBrandsFromApiAsync} title="click me"></Button>
+        {/* <Button onPress={this.getBrandsFromApiAsync} title="click me"></Button> */}
         <Text style={styles.instructions}>
         </Text>
-        <SearchBar />
+        {/* <SearchBar /> */}
+        <BrandList />
       </View>
     );
   }
