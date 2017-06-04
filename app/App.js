@@ -8,9 +8,8 @@ import {
   TabBarIOS
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import DataList from '../components/DataList';
-import About from '../components/About';
-import Search from '../components/Search';
+import SearchBrand from '../components/SearchBrand';
+import About from '../screens/AboutScreen';
 import BrandShow from '../components/BrandShow'
 
 
@@ -35,7 +34,7 @@ class HomeScreen extends React.Component {
 
         <Button
           style={styles.button}
-          onPress={() => navigate('List')}
+          onPress={() => navigate('Search')}
           title="All Brands"
         />
         <Button
@@ -43,21 +42,15 @@ class HomeScreen extends React.Component {
           onPress={() => navigate('About')}
           title="About"
         />
-        <Button
-          style={{borderWidth: 5}}
-          onPress={() => navigate('Search')}
-          title="Search"
-        />
       </View>
     );
   }
 }
 
-const test = StackNavigator({
+const fashionfinder = StackNavigator({
   Home: { screen: HomeScreen },
-  List: { screen: DataList },
+  Search: { screen: SearchBrand },
   About: {screen: About },
-  Search: {screen: Search},
   BrandShow: {screen: BrandShow}
 });
 
@@ -80,4 +73,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('test', () => test);
+AppRegistry.registerComponent('fashionfinder', () => fashionfinder);
