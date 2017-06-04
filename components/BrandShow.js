@@ -19,9 +19,9 @@ export default class DataList extends Component{
       <View style={styles.container}>
         <Text>Brand: {params.name}</Text>
         <Text>Ethical: {params.ethical}</Text>
-        <Text> {params.brand}</Text>
-        <Text> {params.brand}</Text>
-
+        <Text>Sustainable: {params.sustainable}</Text>
+        <Text>Description: {params.description}</Text>
+        <Text>Link: {params.link}</Text>
       </View>
     );
   }

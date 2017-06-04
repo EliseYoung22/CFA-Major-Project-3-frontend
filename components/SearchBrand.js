@@ -36,7 +36,7 @@ export default class DataList extends Component{
     renderRow(brand, sectionId, rowId, highlightRow){
       const { navigate } = this.props.navigation;
         return(
-            <TouchableHighlight onPress={() => navigate('BrandShow', {name: brand.name, ethical: brand.ethical})}>
+            <TouchableHighlight onPress={() => navigate('BrandShow', {name: brand.name, ethical: brand.ethical, sustainable: brand.sustainable, description: brand.description, link: brand.link})}>
             <View style={styles.row}>
                 <Text style={styles.rowText}>{brand.name}</Text>
             </View>
@@ -63,10 +63,6 @@ export default class DataList extends Component{
               value={this.state.searchText}
               onChangeText={(brand) => this.filterSearch(brand)}
             />
-{/*
-            {filteredBrands.map((brand, i) =>
-            <Text key={i}>{brand.name}</Text>)} */}
-
             <ListView
                 dataSource={this.state.brandDataSource}
                 renderRow={this.renderRow.bind(this)}

@@ -5,7 +5,8 @@ import {
   View,
   Button,
   StyleSheet,
-  TabBarIOS
+  TabBarIOS,
+  Image
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import SearchBrand from '../components/SearchBrand';
@@ -22,20 +23,12 @@ class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        {/* <TabBarIOS>
-          <TabBarIOS.Item
-          onPress={() => navigate('List')}
-          title="Search"
-          />
-        <TabBarIOS.Item
-          onPress={() => navigate('About')}
-          title="About"
-        /> */}
-
+        <Text style={{fontSize:40}}> Fashion Finder</Text>
+      <Image source={require('../fashionfinder.png')} style={{width: 200, height: 200}}/>
         <Button
           style={styles.button}
           onPress={() => navigate('Search')}
-          title="All Brands"
+          title="Search"
         />
         <Button
           style={{borderWidth: 5}}
