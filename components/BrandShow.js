@@ -4,24 +4,26 @@ import {
   Text,
   View,
   Button,
-  StyleSheet
+  StyleSheet,
+  Image
 } from 'react-native';
 
 export default class DataList extends Component{
   // Nav options can be defined as a function of the screen's props:
   static navigationOptions = ({ navigation }) => ({
-    title: ` ${navigation.state.params.name}`,
+    title: `${navigation.state.params.name}`,
   });
   render() {
     // The screen's current route is passed in to `props.navigation.state`:
     const { params } = this.props.navigation.state;
     return (
       <View style={styles.container}>
-        <Text>Brand: {params.name}</Text>
-        <Text>Ethical: {params.ethical}</Text>
-        <Text>Sustainable: {params.sustainable}</Text>
-        <Text>Description: {params.description}</Text>
-        <Text>Link: {params.link}</Text>
+        <Image source={require('../firstbase.jpg')} style={{width: 200, height: 200}}/>
+        <Text style={styles.fields}> {params.name}</Text>
+        <Text style={styles.fields}>Ethical: {params.ethical}</Text>
+        <Text style={styles.fields}>Sustainable: {params.sustainable}</Text>
+        <Text style={styles.fields}>Description: {params.description}</Text>
+        <Text style={styles.fields}>{params.link}</Text>
       </View>
     );
   }
@@ -31,16 +33,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  fields: {
+    marginBottom:20,
+    fontSize:20,
   },
+  top: {
+    marginTop:20,
+  }
 });

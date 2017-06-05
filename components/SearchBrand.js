@@ -57,15 +57,16 @@ export default class DataList extends Component{
     })
     this.setState({
         brandDataSource: this.state.brandDataSource.cloneWithRows(newData),
-        brand: brand
+        // brand: brand
       })
   }
   render(){
     return(
       <View style={{backgroundColor: 'white'}}>
         <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1, width:250, marginLeft:60}}
+          style={{height: 40, borderColor: 'gray', borderWidth: 1, width:250, marginLeft:60, marginTop:120, marginBottom:80}}
           value={this.state.searchText}
+          placeholder="Search"
           onChangeText={(brand) => this.filterSearch(brand)}
         />
         <ListView

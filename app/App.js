@@ -6,12 +6,15 @@ import {
   Button,
   StyleSheet,
   TabBarIOS,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import SearchBrand from '../components/SearchBrand';
 import About from '../screens/AboutScreen';
-import BrandShow from '../components/BrandShow'
+import BrandShow from '../components/BrandShow';
+import {bind} from '../Utils/utils';
+
 
 
 
@@ -19,22 +22,23 @@ class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Welcome',
   };
+
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
       <Text style={{fontSize:40}}> Fashion Finder</Text>
       <Image source={require('../fashionfinder.png')} style={{width: 200, height: 200}}/>
+      <Button
+            style={{borderWidth: 5}}
+            onPress={() => navigate('Search')}
+            title="Search"
+          />
         <Button
-          style={styles.button}
-          onPress={() => navigate('Search')}
-          title="Search"
-        />
-        <Button
-          style={{borderWidth: 5}}
-          onPress={() => navigate('About')}
-          title="About"
-        />
+            style={{borderWidth: 5}}
+            onPress={() => navigate('About')}
+            title="About"
+          />
       </View>
     );
   }
