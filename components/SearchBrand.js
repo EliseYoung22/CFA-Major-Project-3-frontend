@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppRegistry, Text, View, ListView, StyleSheet, TouchableHighlight, TextInput } from 'react-native';
+import {AppRegistry, Text, View, ListView, StyleSheet, TouchableHighlight, TextInput, ScrollView } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 
@@ -69,6 +69,7 @@ export default class DataList extends Component{
           placeholder="Search"
           onChangeText={(brand) => this.filterSearch(brand)}
         />
+      
         <ListView
             dataSource={this.state.brandDataSource}
             renderRow={this.renderRow.bind(this)}
