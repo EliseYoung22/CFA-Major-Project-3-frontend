@@ -71,10 +71,12 @@ export default class DataList extends Component{
           placeholder="Search"
           onChangeText={(brand) => this.filterSearch(brand)}
         />
-        <ListView
-            dataSource={this.state.brandDataSource}
-            renderRow={this.renderRow.bind(this)}
-        />
+        <ScrollView>
+          <ListView
+              dataSource={this.state.brandDataSource}
+              renderRow={this.renderRow.bind(this)}
+          />
+      </ScrollView>
       </View>
     );
   }
