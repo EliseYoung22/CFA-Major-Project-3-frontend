@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppRegistry, Text, View, ListView, StyleSheet, TouchableHighlight, TextInput } from 'react-native';
+import {AppRegistry, Text, View, ListView, StyleSheet, TouchableHighlight, TextInput, ScrollView } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 
@@ -57,17 +57,19 @@ export default class DataList extends Component{
     })
     this.setState({
         brandDataSource: this.state.brandDataSource.cloneWithRows(newData),
-        brand: brand
+        // brand: brand
       })
   }
   render(){
     return(
       <View style={{backgroundColor: 'white'}}>
         <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1, width:250, marginLeft:60}}
+          style={{height: 40, borderColor: 'gray', borderWidth: 1, width:250, marginLeft:60, marginTop:120, marginBottom:80}}
           value={this.state.searchText}
+          placeholder="Search"
           onChangeText={(brand) => this.filterSearch(brand)}
         />
+      
         <ListView
             dataSource={this.state.brandDataSource}
             renderRow={this.renderRow.bind(this)}
