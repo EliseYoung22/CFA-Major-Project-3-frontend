@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import {AppRegistry, Text, View, ListView, StyleSheet, TouchableHighlight, TextInput, ScrollView } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import InfiniteScrollView from 'react-native-infinite-scroll-view';
 
 
 
-export default class DataList extends Component{
+export default class SearchBrand extends Component{
   static navigationOptions = {
     title: 'Brand List',
     text: '',
@@ -53,13 +52,13 @@ export default class DataList extends Component{
 
  filterSearch(text){
     const newData = this.state.brands.filter(function(brand){
+      console.log(brand);
         const brandData = brand.name.toUpperCase()
         const textData = text.toUpperCase()
         return brandData.indexOf(textData) > -1
     })
     this.setState({
         brandDataSource: this.state.brandDataSource.cloneWithRows(newData),
-        // brand: brand
       })
   }
   render(){
@@ -71,12 +70,10 @@ export default class DataList extends Component{
           placeholder="Search"
           onChangeText={(brand) => this.filterSearch(brand)}
         />
-        <ScrollView>
           <ListView
               dataSource={this.state.brandDataSource}
               renderRow={this.renderRow.bind(this)}
           />
-      </ScrollView>
       </View>
     );
   }
@@ -94,5 +91,3 @@ const styles = StyleSheet.create({
         flex:1
     }
 });
-
-AppRegistry.registerComponent('SearchBrand', () => SearchBrand);
