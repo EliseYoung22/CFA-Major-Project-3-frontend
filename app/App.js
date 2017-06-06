@@ -27,8 +27,8 @@ class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-      <Text style={{fontSize:40}}> Fashion Finder</Text>
-      <Image source={require('../fashionfinder.png')} style={{width: 200, height: 200}}/>
+        <Text style={{fontSize:40}}> Fashion Finder</Text>
+        <Image source={require('../fashionfinder.png')} style={{width: 200, height: 200}}/>
       <Button
             style={{borderWidth: 5}}
             onPress={() => navigate('Search')}
