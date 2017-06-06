@@ -8,7 +8,7 @@ import {
   Image
 } from 'react-native';
 
-export default class DataList extends Component{
+export default class BrandShow extends Component{
   // Nav options can be defined as a function of the screen's props:
   static navigationOptions = ({ navigation }) => ({
     title: `${navigation.state.params.name}`,

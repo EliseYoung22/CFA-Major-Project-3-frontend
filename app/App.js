@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import SearchBrand from '../components/SearchBrand';
-import About from '../screens/AboutScreen';
+import AboutScreen from '../screens/AboutScreen';
 import BrandShow from '../components/BrandShow';
 import {bind} from '../Utils/utils';
 
@@ -47,7 +47,7 @@ class HomeScreen extends React.Component {
 const fashionfinder = StackNavigator({
   Home: { screen: HomeScreen },
   Search: { screen: SearchBrand },
-  About: {screen: About },
+  About: {screen: AboutScreen },
   BrandShow: {screen: BrandShow}
 });
 

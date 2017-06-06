@@ -7,7 +7,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-export default class DataList extends Component{
+export default class AboutScreen extends Component{
   static navigationOptions = {
     title: 'About',
   };
@@ -15,7 +15,7 @@ export default class DataList extends Component{
     return (
       <View style={styles.container}>
         <Text> This is the About page </Text>
-
+        <Text> fashionfinder was created </Text>
       </View>
     );
   }
