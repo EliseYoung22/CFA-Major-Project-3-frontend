@@ -59,10 +59,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop:20,
     alignItems: 'center',
+    textAlign:'center',
+    fontWeight:'bold'
 
   },
   font: {
-    fontSize:15,
-
+    fontSize:17,
+    textAlign:'center',
   }
 });
