@@ -49,6 +49,5 @@ const styles = StyleSheet.create({
   name: {
     fontSize:30,
     marginBottom:10,
-    fontFamily:'Cursive'
   }
 });
