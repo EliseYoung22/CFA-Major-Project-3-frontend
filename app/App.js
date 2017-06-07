@@ -12,6 +12,7 @@ import {
 import { StackNavigator } from 'react-navigation';
 import SearchBrand from '../components/SearchBrand';
 import AboutScreen from '../screens/AboutScreen';
+import BackgroundImage from '../components/BackgroundImage';
 import BrandShow from '../components/BrandShow';
 import {bind} from '../Utils/utils';
 
@@ -26,20 +27,27 @@ class HomeScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Text style={{fontSize:40}}> Fashion Finder</Text>
-        <Image source={require('../fashionfinder.png')} style={{width: 200, height: 200}}/>
-      <Button
-            style={{borderWidth: 5}}
-            onPress={() => navigate('Search')}
-            title="Search"
-          />
+      <BackgroundImage>
+        <View style={styles.container}>
+        {/* <Text style={{fontSize:40}}> Fashion Finder</Text> */}
+        <Image source={require('../fashionbible.png')}
+        style={{marginBottom: 25}}  />
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <Button
-            style={{borderWidth: 5}}
-            onPress={() => navigate('About')}
-            title="About"
-          />
+              style={{borderWidth: 5, marginRight:20, fontSize:30}}
+              color='black'
+              onPress={() => navigate('Search')}
+              title="Search"
+            />
+          <Button
+              style={styles.button}
+              color='black'
+              onPress={() => navigate('About')}
+              title="About"
+            />
+        </View>
       </View>
+      </BackgroundImage>
     );
   }
 }
@@ -56,18 +64,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    backgroundColor:'transparent'
   },
   button: {
-    borderWidth: 1,
-    borderColor: '#000033',
-    backgroundColor: '#000033',
-  },
+    fontSize:30
+  }
 });
 
 AppRegistry.registerComponent('fashionfinder', () => fashionfinder);

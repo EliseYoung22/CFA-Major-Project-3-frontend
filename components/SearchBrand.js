@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {AppRegistry, Text, View, ListView, StyleSheet, TouchableHighlight, TextInput, ScrollView } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import BackgroundImage from './BackgroundImage';
 
 
 
@@ -63,18 +64,20 @@ export default class SearchBrand extends Component{
   }
   render(){
     return(
-      <View style={{backgroundColor: 'white'}}>
-        <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1, width:250, marginLeft:60, paddingLeft:10}}
-          value={this.state.searchText}
-          placeholder="Search"
-          onChangeText={(brand) => this.filterSearch(brand)}
-        />
-          <ListView
-              dataSource={this.state.brandDataSource}
-              renderRow={this.renderRow.bind(this)}
+      <BackgroundImage>
+        <View style={{backgroundColor: 'transparent'}}>
+          <TextInput
+            style={{height: 40, borderColor: 'gray', borderWidth: 1, width:250, marginLeft:60, paddingLeft:10, backgroundColor:'white'}}
+            value={this.state.searchText}
+            placeholder="Search"
+            onChangeText={(brand) => this.filterSearch(brand)}
           />
-      </View>
+            <ListView
+                dataSource={this.state.brandDataSource}
+                renderRow={this.renderRow.bind(this)}
+            />
+        </View>
+    </BackgroundImage>
     );
   }
 }
@@ -88,6 +91,7 @@ const styles = StyleSheet.create({
         marginBottom:3
     },
     rowText: {
-        flex:1
+        flex:1,
+        fontSize:17,
     }
 });
