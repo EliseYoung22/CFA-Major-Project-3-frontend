@@ -21,7 +21,8 @@ export default class BrandShow extends Component{
     return (
       <BackgroundImage>
         <View style={styles.container}>
-          {/* <Image source={require('../firstbase.jpg')} style={{width: 200, height: 200}}/> */}
+          <Image source={require('../fashionfinder.jpg')} style={{width: 200, height: 200}}/>
+          {/* <Image>{params.data}</Image> */}
           <Text style={styles.name}>{params.name}</Text>
           <Text style={styles.fields}>Ethical: {params.ethical}</Text>
           <Text style={styles.fields}>Sustainable: {params.sustainable}</Text>

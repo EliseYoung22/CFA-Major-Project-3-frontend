@@ -34,6 +34,14 @@ export default class SearchBrand extends Component{
             });
         });
   }
+  // fetchBrandLogo(){
+  //   fetch('https://brands-fb.herokuapp.com/api/files/:id')
+  //   .then((brand) => {
+  //     this.setState({ brandLogo: brand.data });
+  //     console.log('');
+  //   })
+  //   console.log(this.state.brandLogo);
+  // }
 
   renderRow(brand, sectionId, rowId, highlightRow){
     const { navigate } = this.props.navigation;
