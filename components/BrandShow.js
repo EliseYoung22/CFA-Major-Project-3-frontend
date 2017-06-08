@@ -5,9 +5,12 @@ import {
   View,
   Button,
   StyleSheet,
-  Image
+  Image,
+  Linking
 } from 'react-native';
-import BackgroundImage from '../components/BackgroundImage'
+import BackgroundImage from '../components/BackgroundImage';
+import Hyperlink from 'react-native-hyperlink'
+
 
 
 export default class BrandShow extends Component{
@@ -21,13 +24,14 @@ export default class BrandShow extends Component{
     return (
       <BackgroundImage>
         <View style={styles.container}>
-          <Image source={require('../fashionfinder.jpg')} style={{width: 200, height: 200}}/>
+          <Image source={require('../fashionfinder.png')} style={{width: 200, height: 200}}/>
           {/* <Image>{params.data}</Image> */}
           <Text style={styles.name}>{params.name}</Text>
           <Text style={styles.fields}>Ethical: {params.ethical}</Text>
           <Text style={styles.fields}>Sustainable: {params.sustainable}</Text>
-          <Text style={styles.fields}>Description: {params.description}</Text>
+          <Text style={styles.fields}>{params.description}</Text>
           <Text style={styles.fields}>Certificates: {params.certificates}</Text>
+          <Hyperlink onPress={ url => Linking.openURL(url) }>{params.link}</Hyperlink>
         </View>
       </BackgroundImage>
     );
@@ -39,6 +43,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'transparent',
+    padding: 30,
+    textAlign: 'center'
   },
   fields: {
     marginBottom:20,
@@ -50,5 +56,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize:30,
     marginBottom:10,
+    padding: 5,
+    borderWidth: 2
   }
 });
