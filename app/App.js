@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     backgroundColor:'transparent'
   },
   button: {
-    fontSize:30
+    fontSize:50
   }
 });
 
