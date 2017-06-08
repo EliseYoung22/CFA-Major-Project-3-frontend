@@ -47,8 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'transparent',
-    padding: 30,
-    textAlign: 'center'
+    padding: 30
   },
   fields: {
     marginBottom:20,
