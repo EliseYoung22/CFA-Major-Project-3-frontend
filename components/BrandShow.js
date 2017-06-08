@@ -6,10 +6,11 @@ import {
   Button,
   StyleSheet,
   Image,
+  ScrollView,
   Linking
 } from 'react-native';
 import BackgroundImage from '../components/BackgroundImage';
-import Hyperlink from 'react-native-hyperlink'
+import Hyperlink from 'react-native-hyperlink';
 
 
 
@@ -23,17 +24,19 @@ export default class BrandShow extends Component{
     const { params } = this.props.navigation.state;
     return (
       <BackgroundImage>
-        <View style={styles.container}>
-          {/* <Image source={require('../fashionfinder.png')} style={{width: 200, height: 200}}/> */}
-          <Image style={{width: 150, height: 150, marginBottom: 30}}
-            source={{uri: params.image}}/>
-          <Text style={styles.name}>{params.name}</Text>
-          <Text style={styles.fields}>Ethical: {params.ethical}</Text>
-          <Text style={styles.fields}>Sustainable: {params.sustainable}</Text>
-          <Text style={styles.fields}>{params.description}</Text>
-          <Text style={styles.fields}>Certificates: {params.certificates}</Text>
-          <Hyperlink onPress={ url => Linking.openURL(url) }>{params.link}</Hyperlink>
-        </View>
+        <ScrollView>
+          <View style={styles.container}>
+            {/* <Image source={require('../fashionfinder.png')} style={{width: 200, height: 200}}/> */}
+            <Image style={{width: 350, height: 150, marginBottom: 30}}
+              source={{uri: params.image}}/>
+            <Text style={styles.name}>{params.name}</Text>
+            <Text style={styles.fields}>Ethical: {params.ethical}</Text>
+            <Text style={styles.fields}>Sustainable: {params.sustainable}</Text>
+            <Text style={styles.fields}>{params.description}</Text>
+            <Text style={styles.fields}>Certificates: {params.certificates}</Text>
+            <Hyperlink onPress={ url => Linking.openURL(url) }>{params.link}</Hyperlink>
+          </View>
+        </ScrollView>
       </BackgroundImage>
     );
   }
