@@ -16,6 +16,7 @@ export default class SearchBrand extends Component{
     this.state = {
         brandDataSource: ds,
         brands: [],
+        file: [],
     };
   }
 
@@ -51,7 +52,8 @@ export default class SearchBrand extends Component{
             ethical: brand.ethical,
             sustainable: brand.sustainable,
             description: brand.description,
-            link: brand.link})}>
+            link: brand.link,
+            image: brand.image})}>
           <View style={styles.row}>
               <Text style={styles.rowText}>{brand.name}</Text>
           </View>
