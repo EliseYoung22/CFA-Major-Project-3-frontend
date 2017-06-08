@@ -53,6 +53,7 @@ export default class SearchBrand extends Component{
             sustainable: brand.sustainable,
             description: brand.description,
             link: brand.link,
+            certificates: brand.certificates,
             image: brand.image})}>
           <View style={styles.row}>
               <Text style={styles.rowText}>{brand.name}</Text>
