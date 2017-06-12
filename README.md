@@ -34,10 +34,25 @@ I am satisfied with the final result of this project even though the main functi
 It was a good experience collaborating with a client and working with them to satisfy their needs.
 ![screen1](https://user-images.githubusercontent.com/25731474/26910986-d4ef4cc6-4c4d-11e7-936f-8bac9fee35c2.png)
 ![screen2](https://user-images.githubusercontent.com/25731474/26910988-d4f4d4f2-4c4d-11e7-81cb-ae95466a9e0c.png)
-![screen3](https://user-images.githubusercontent.com/25731474/26910987-d4f3ae6a-4c4d-11e7-8250-e6a63ada6a25.png)
-![screen4](https://user-images.githubusercontent.com/25731474/26910985-d4eff810-4c4d-11e7-882b-ea39370242f0.png)
-
+![screen shot 2017-06-13 at 9 25 39 am](https://user-images.githubusercontent.com/25731474/27059546-62bbf1c4-501a-11e7-8c54-01c8dc1af45a.png)![screen shot 2017-06-13 at 9 25 21 am](https://user-images.githubusercontent.com/25731474/27059540-5b6d0a16-501a-11e7-980b-5226cccd71b0.png)
 
 ### Code Climate:
 ![screen shot 2017-06-09 at 8 54 53 am](https://user-images.githubusercontent.com/25731474/26954115-8dc326c0-4cf1-11e7-969c-56960f9bb744.png)
 ![screen shot 2017-06-09 at 8 55 19 am](https://user-images.githubusercontent.com/25731474/26954116-8ecd1b7a-4cf1-11e7-8903-0d5baeecec46.png)
+
+### Installation
+To run this app on your own computer you will need to have Xcode installed and have the React-Native interface setup:
+``` sh
+$ brew install node
+$ brew install watchman
+$ npm install -g react-native-cli
+```
+
+- git clone this repo
+
+Then run:
+``` sh
+$ yarn install
+$ yarn react-native run-ios
+```
+This should then launch the app in the Xcode simulator.
