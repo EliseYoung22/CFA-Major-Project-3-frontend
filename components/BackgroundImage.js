@@ -4,13 +4,13 @@ import {AppRegistry, Image, StyleSheet } from 'react-native';
 
 class BackgroundImage extends Component {
 
-    render() {
-        return (
-            <Image source={require('../marble-back.jpg')} style={styles.backgroundImage}>
-            {this.props.children}
-            </Image>
-        )
-    }
+  render() {
+    return (
+        <Image source={require('../marble-back.jpg')} style={styles.backgroundImage}>
+        {this.props.children}
+        </Image>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -21,4 +21,5 @@ const styles = StyleSheet.create({
         resizeMode: 'cover'
     }
 });
- module.exports = BackgroundImage;
+
+module.exports = BackgroundImage;

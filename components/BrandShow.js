@@ -26,7 +26,6 @@ export default class BrandShow extends Component{
       <BackgroundImage>
         <ScrollView>
           <View style={styles.container}>
-            {/* <Image source={require('../fashionfinder.png')} style={{width: 200, height: 200}}/> */}
             <Image style={{width: 350, height: 150, marginBottom: 30}}
               source={{uri: params.image}}/>
             <Text style={styles.name}>{params.name}</Text>

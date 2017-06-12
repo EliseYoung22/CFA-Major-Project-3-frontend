@@ -29,7 +29,6 @@ class HomeScreen extends React.Component {
     return (
       <BackgroundImage>
         <View style={styles.container}>
-        {/* <Text style={{fontSize:40}}> Fashion Finder</Text> */}
         <Image source={require('../fashionbible.png')}
         style={{marginBottom: 25}}  />
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
