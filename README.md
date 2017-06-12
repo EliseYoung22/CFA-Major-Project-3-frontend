@@ -22,7 +22,7 @@ The design for the application is very minimal, my client wanted the main focus 
 
 ### Tools:
 At the start of the project I expressed some interest in experimenting with React-Native to make an app, so when My client and I were discussing potential ideas the search app appealed to me the most because it seemed the most achievable with the time constraints and the opportunity to use React-Native excited me. The other idea that my client proposed to me was a site/app where people could customise their own leggings and activewear from her store. She informed me that this concept was getting big in the industry but I knew that those skills were beyond me.
-I used Node.js and Express to build a simple data base where we could enter brands and then use it as an API to render on the React-native side.
+I used Node.js and Express to build a simple data base where we could enter brands and then use it as an API to render on the React-native side. Here is the repo for the database: https://github.com/EliseYoung22/CFA-Major-Project-3-backend
 The best communication tool for us was email and phone calls as my client is very busy so she could respond in her own time. I made sure to get as much information from her in the initial phone call so I could go ahead with the build and just give her regular updates and tweak any small changes she suggested.
 For development I used Tello to map out what I needed to do and would do daily checkins to monitor my progress. I also find it more effective to write to-do lists in my note book so I can have it sitting next to me and find crossing things off very satisfying.
 ##### Trello
